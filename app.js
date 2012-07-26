@@ -45,7 +45,7 @@ app.post('/users', function (req, res) {
     connection.query('INSERT INTO users SET ?', req.body, 
         function (err, result) {
             if (err) throw err;
-            res.send('sUer added to database with ID: ' + result.insertId);
+            res.send('User added to database with ID: ' + result.insertId);
         }
     );
 });
