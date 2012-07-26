@@ -15,11 +15,11 @@ var app = module.exports = express.createServer();
 
 // Database setup
 
-connection.query('CREATE DATABASE test', function (err) {
+connection.query('CREATE DATABASE IF NOT EXISTS test', function (err) {
     if (err) throw err;
     connection.query('USE test', function (err) {
         if (err) throw err;
-        connection.query('CREATE TABLE users('
+        connection.query('CREATE TABLE IF NOT EXISTS users('
             + 'id INT NOT NULL AUTO_INCREMENT,'
             + 'PRIMARY KEY(id),'
             + 'name VARCHAR(30)'
